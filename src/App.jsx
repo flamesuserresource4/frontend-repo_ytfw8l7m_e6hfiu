@@ -1,28 +1,45 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero';
+import About from './components/About';
+import Services from './components/Services';
+import Contact from './components/Contact';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const Footer = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+    <footer className="bg-slate-950 text-slate-300">
+      <div className="mx-auto max-w-7xl px-6 py-10 grid md:grid-cols-2 gap-6 items-center">
+        <div>
+          <p className="text-white font-semibold">FANIABELLA LTD</p>
+          <p className="text-sm mt-1">“Restoring Health, One Step at a Time”</p>
+          <p className="text-sm mt-2">70 Spackmans Way, Slough, SL1 2SB, England, UK</p>
+          <p className="text-xs mt-2">SIC: 86900 — Other human health activities</p>
+        </div>
+        <div className="md:text-right text-sm">
+          <a
+            href={`https://wa.me/447508519328?text=${encodeURIComponent("Hello FANIABELLA LTD, I'd like to book a care service.")}`}
+            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-4 py-2 rounded-lg"
+            target="_blank"
+            rel="noreferrer"
           >
-            Count is {count}
-          </button>
+            Book via WhatsApp
+          </a>
+          <p className="mt-3 opacity-80">
+            © {new Date().getFullYear()} FANIABELLA LTD. All rights reserved. • Privacy • Terms
+          </p>
         </div>
       </div>
-    </div>
-  )
-}
+    </footer>
+  );
+};
 
-export default App
+export default function App() {
+  return (
+    <div className="min-h-screen bg-white text-slate-900">
+      <Hero />
+      <About />
+      <Services />
+      <Contact />
+      <Footer />
+    </div>
+  );
+}
